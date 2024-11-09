@@ -1,0 +1,5 @@
+acorn
+apt
+age
+tmux
+kakoune
