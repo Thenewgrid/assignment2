@@ -54,7 +54,8 @@ make_user () {
   echo "$name:x:$uid:$uid:Regular added user hk:/home/$name:$shell" >> /etc/passwd
   
   # Setting the password for the user.
-  passwd $name
+  # https://stackoverflow.com/questions/42120659/how-can-i-automatically-respond-to-a-password-prompt-via-the-command-line
+  echo $password | passwd -s $name 
 
   # change ownership so that the new user owns their stuff.
   chown -R "$name:$name" /home/$name
